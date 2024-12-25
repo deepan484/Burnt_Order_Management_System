@@ -24,7 +24,7 @@ This project is a cutting-edge **Gen AI-based order management system** that use
   - 📦 **Line Items**: Product Code, Description, Quantity, and Price.  
 - **Interactive Review**:  
   - Adjust quantities.  
-  - View similar product alternatives.  
+  - View similar product alternatives (Upcoming - Feature)  
   - Confirm and finalize the order.  
 
 ---
@@ -67,23 +67,21 @@ The parsed results are formatted as:
   - Product Code  
   - Description  
   - Price  
-
 ---
 
 ### 4️⃣ **Order Generation**  
 The system assembles the matched products into a structured order, which includes:  
-- **Order ID**: Generated using Python's `uuid`.  
-- **Order Date**: Fetched dynamically using `datetime`.  
-- **Line Items**: Each item contains the product code, description, quantity, and price.  
-
+- **Product-Description**: Generated from the matched embedding's Product Code.  
+- **quantity**: Fetched dynamically from user's - input via llama.
+  
 ---
 
 ### 5️⃣ **Interactive Review**  
 Users are presented with an order summary for review:  
 - Modify quantities using increment (+) and decrement (-) buttons.  
-- View alternative products for each item(Working on that feature)  
-- Confirm the order when satisfied.  
-
+- View alternative products for each item (Working on that feature)  
+- Confirm the order when satisfied.
+  
 ---
 
 ### 6️⃣ **Order Finalization**  
@@ -95,7 +93,7 @@ Once confirmed, the system generates an **Order Summary** with:
 ---
 ### 7️⃣ **Downloading Pdf**:
 User can have a copy of the final Order:
-- locally have a copy
+- Locally have a copy of the order
 
 
 ## 🖼️ Application Walkthrough  
