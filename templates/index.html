@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Management</title>
+  <link rel="stylesheet" href="\static\css\styles.css">
+</head>
+<body>
+  <div class="navbar">
+    <a href="#" class="logo">burnt</a>
+  </div>
+  <div class="content">
+    <!-- Welcome Section -->
+    <h1>Welcome to the Order Management System</h1>
+    <form action="/process" method="POST" class="order-form">
+      <textarea name="grocery_input" class="input-box" placeholder="Type your detailed order here..."></textarea>
+      <button type="submit" class="submit-button">Submit</button>
+    </form>
+
+    <!-- Display error message if there's an error -->
+    {% if error %}
+    <div class="error-message" style="color: red;">
+      <p>{{ error }}</p>
+    </div>
+    {% endif %}
+
+    <!-- Results Section -->
+    {% if results %}
+    <h1>Order Details</h1>
+    <div class="card-container">
+      {% for result in results %}
+      <div class="card">
+        <div class="card-content">
+          <h3>{{ result['original_item'] }}</h3>
+          <h6 style="display: none;">{{ result['product_code'] }}</h6>
+          <p><strong>Matched Product:</strong> {{ result['matched_product'] }}</p>
+        </div>
+
+        <div class="quantity-container">
+          <p>Quantity:</p>
+          <button class="decrement-button" onclick="decreaseQuantity(this)">-</button>
+          <span class="quantity-value">{{ result['quantity'] }}</span>
+          <button class="increment-button" onclick="increaseQuantity(this)">+</button>
+        </div>
+    
+        <div class="card-footer">
+          <button class="alternative-btn">View Alternatives</button>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="place-order-container">
+      <button type="button" class="place-order-btn" onclick="placeOrder()">Place Order</button>
+    </div>
+    <br>
+    <br>
+  
+    {% else %}
+    <p>No results found.</p>
+    {% endif %}
+  </div>
+
+  <!-- Quantity Control Script -->
+  <script>
+    function increaseQuantity(button) {
+      const quantitySpan = button.previousElementSibling;
+      let currentQuantity = parseInt(quantitySpan.textContent);
+      quantitySpan.textContent = currentQuantity + 1;
+    }
+
+    function decreaseQuantity(button) {
+      const quantitySpan = button.nextElementSibling;
+      let currentQuantity = parseInt(quantitySpan.textContent);
+      if (currentQuantity > 1) {
+        quantitySpan.textContent = currentQuantity - 1;
+      }
+    }
+    function placeOrder() {
+      const orderDetails = [];
+      document.querySelectorAll('.card').forEach(card => {
+        const itemName = card.querySelector('.card-content h3').textContent;
+        const quantity = card.querySelector('.quantity-value').textContent;
+        const product_code = card.querySelector('.card-content h6').textContent;
+        orderDetails.push(`${itemName}:${quantity}:${product_code}`);
+      });
+
+      const form = document.createElement('form');
+      form.method = 'POST';
+      form.action = '/place_order';
+
+      orderDetails.forEach(detail => {
+        const input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = 'order_details';
+        input.value = detail;
+        form.appendChild(input);
+      });
+
+      document.body.appendChild(form);
+      form.submit();
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,223 @@
+/* General Styles */
+body, html {
+    background-image: 'bg.jpg';
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+
+    color: #fff;
+}
+
+body {
+    position: relative;
+    background: url('bg.jpg') no-repeat center center fixed; 
+    background-size: cover;
+    position: relative;
+  }
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .navbar .logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white;
+    text-transform: lowercase;
+    text-decoration: none;
+  }
+
+
+/* Background */
+.background-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+ 
+}
+
+/* Order Summary Container */
+.order-summary-container {
+    background: rgba(20, 20, 20, 0.9);
+    padding: 30px;
+    border-radius: 8px;
+    max-width: 900px;
+    width: 100%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    margin-top: 80px;
+}
+
+/* Header Section */
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 32px;
+    color: #ffd700; /* Burnt Gold */
+}
+
+.order-details {
+    text-align: center;
+    font-size: 16px;
+}
+
+/* Order Items */
+.order-items table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.order-items th, .order-items td {
+    border: 1px solid #333;
+    padding: 10px;
+    text-align: center;
+}
+
+.order-items th {
+    background-color: #444;
+    font-weight: bold;
+}
+
+.order-items td {
+    background-color: #222;
+}
+
+/* Total Section */
+.total {
+    text-align: right;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffd700;
+}
+
+/* Thank You Section */
+.thank-you {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+/* Download Button */
+.download-button {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.download-button button {
+    background-color: #ffd700;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    color: #000;
+    border-radius: 5px;
+}
+
+.download-button button:hover {
+    background-color: #ffa500;
+}
+
+
+/* Print Styles */
+@media print {
+    body {
+        margin: 0;
+        padding: 0;
+        color: black;
+        background: white;
+    }
+
+    .navbar, .download-button {
+        display: none; 
+    }
+
+    .order-summary-container {
+        margin: 0; 
+        padding: 10px;
+        background: white;
+        box-shadow: none;
+        width: 100%;
+        page-break-inside: avoid;
+        max-height: 100vh; 
+        overflow: hidden; 
+    }
+
+    .background-container {
+        padding: 0;
+    }
+
+    .header h1 {
+        color: black;
+    }
+
+    .order-details, .total, .thank-you {
+        color: black;
+    }
+
+    .order-items th, .order-items td {
+        color: black;
+    }
+
+    .order-items th {
+        background-color: #ccc;
+    }
+
+    .order-items td {
+        background-color: white;
+    }
+
+    .total {
+        color: black;
+    }
+
+    footer {
+        page-break-after: always;
+    }
+
+    table {
+        page-break-inside: avoid; 
+        width: 100%;
+    }
+
+    table tr {
+        page-break-inside: avoid;
+    }
+
+    
+    table, th, td {
+        font-size: 12px; 
+        line-height: 1.2;
+        padding: 5px; 
+    }
+
+    .header, .order-details, .order-items, .total, .thank-you {
+        margin-bottom: 10px;
+    }
+
+
+    .order-items {
+        page-break-inside: auto;
+    }
+
+    .order-summary-container {
+        page-break-before: avoid; 
+        page-break-inside: avoid; 
+    }
+}

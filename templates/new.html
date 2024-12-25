@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Summary</title>
+  <link rel="stylesheet" href="/static/css/order_styles.css">
+</head>
+<body>
+  <div class="navbar">
+    <a href="#" class="logo">burnt</a>
+  </div>
+  <div class="background-container">
+    <div class="order-summary-container">
+      <!-- Header Section -->
+      <header class="header">
+        <h1>Order Summary</h1>
+        <div class="order-details">
+          <p><strong>Order ID:</strong> {{ order_id }}</p>
+          <p><strong>Order Date:</strong> {{ order_date }}</p>
+        </div>
+      </header>
+
+      <!-- Order Items Table -->
+      <section class="order-items">
+        <table>
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Product Code</th>
+              <th>Quantity</th>
+              <th>Price</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for item in order %}
+            <tr>
+              <td>{{ item.name }}</td>
+              <td>{{ item.code }}</td>
+              <td>{{ item.quantity }}</td>
+              <td>${{ item.price }}</td>
+              <td>${{ item.total }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Total Section -->
+      <section class="total">
+        <p><strong>Grand Total: ${{ total_price }}</strong></p>
+      </section>
+
+      <!-- Thank You Message -->
+      <footer class="thank-you">
+        <p>Thank you for placing your order with Burnt!</p>
+      </footer>
+
+      <!-- Download PDF Button -->
+      <div class="download-button">
+        <button onclick="window.print()">Download PDF</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
