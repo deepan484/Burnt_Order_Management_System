@@ -124,6 +124,10 @@ _Parsed and matched results are displayed with options to adjust quantities or v
 _The final summary of the order with a detailed breakdown._  
 
 ---
+### 5. **printing pdf**
+![image](https://github.com/user-attachments/assets/b5fe6912-d1bd-4d98-9b1d-9f9f8de5af8a)
+_printing the order summary._
+
 
 ## 🚀 How to Run  
 
