@@ -130,10 +130,29 @@ _printing the order summary._
 ## 🚀 How to Run  
 
 ### Prerequisites  
-1. **Install Python**: Version 3.9 or higher.  
-2. **Install Dependencies**: Use the provided `requirements.txt`.  
-   ```bash
-   pip install -r requirements.txt
+1. **Install Python**: Version 3.9 or higher.
+2. Clone the Repository:  
+```bash
+git clone https://github.com/deepan484/Burnt_Order_Management_System.git
+cd Burnt_Order_Management_System
+```
+3.Set Up a Virtual Environment (Recommended):
+```
+# Create a virtual environment
+python -m venv venv  
+
+# Activate the virtual environment
+# On Linux/Mac
+source venv/bin/activate  
+
+# On Windows
+venv\Scripts\activate
+```
+4. Install Dependencies:
+ ```
+pip install -r requirements.txt
+```  
+
 ### 🔑 Set Up API Keys  
 
 To run the application, you need to set up API keys for **Pinecone** and **Hugging Face**. Follow these steps:  
@@ -162,17 +181,16 @@ For security, store your API keys in a `.env` file instead of hardcoding them in
    ```env
    PINECONE_API_KEY=YOUR_PINECONE_API_KEY
    HUGGINGFACE_API_KEY=YOUR_HUGGINGFACE_API_KEY
+  
 
-## 🚀 Running the Application  
+### 🏃 Running the Application  
+After setting up the environment and API keys:  
 
-### Clone the Repository:  
-```bash
-git clone https://github.com/deepan484/Burnt_Order_Management_System.git
-cd <repository-folder>
-```
-Under Terminal type in:
-
-`python app.py`
+1. Start the Flask application by running:  
+   ```bash
+   python app.py
+2. Open your browser and navigate to:
+http://127.0.0.1:5000/
 
 ## 📚 Code Structure  
 
