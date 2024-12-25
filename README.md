@@ -124,7 +124,7 @@ _Parsed and matched results are displayed with options to adjust quantities or v
 _The final summary of the order with a detailed breakdown._  
 
 ---
-### 5. **printing pdf**
+### 5. **Printing Pdf**
 ![image](https://github.com/user-attachments/assets/b5fe6912-d1bd-4d98-9b1d-9f9f8de5af8a)
 _printing the order summary._
 
@@ -169,7 +169,7 @@ For security, store your API keys in a `.env` file instead of hardcoding them in
 
 ### Clone the Repository:  
 ```bash
-git clone <repository-url>
+git clone https://github.com/deepan484/Burnt_Order_Management_System.git
 cd <repository-folder>
 ```
 Under Terminal type in:
@@ -186,8 +186,3 @@ Under Terminal type in:
 | `templates/`               | HTML templates for UI.                                   |  
 | `static/`                  | CSS and JavaScript files for styling and interaction.    |  
 | `products.csv`             | Product database (code, description, price).             |  
-
-
-
-
-
