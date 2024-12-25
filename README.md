@@ -31,11 +31,11 @@ This project is a cutting-edge **Gen AI-based order management system** that use
 
 ## 🏗️ Technical Stack  
 
-| **Component**        | **Technology**                |  
+| **Component**         | **Technology**                |  
 |-----------------------|-------------------------------|  
 | Programming Language  | Python                        |  
 | Framework             | Flask                         |  
-| LLM                  | Open-source LLaMA Model       |  
+| LLM                   | Open-source LLaMA Model       |  
 | Embedding Model       | `BAAI/bge-large-en`           |  
 | Vector Database       | Pinecone                      |  
 
@@ -182,5 +182,5 @@ Under Terminal type in:
 | `functions.py`             | Core functions for embedding, matching, and ordering.    |  
 | `initialisation_Testing.py`| Includes the complete process of testing and setting up Pinecone, including embedding generation, upserting, and querying. |  
 | `templates/`               | HTML templates for UI.                                   |  
-| `static/`                  | CSS and JavaScript files for styling and interaction.    |  
+| `static/`                  | CSS and  image files for styling                         |  
 | `products.csv`             | Product database (code, description, price).             |  
